@@ -3,6 +3,7 @@
 #include "thruster_control.h"
 #include "ethernet_handler.h"
 #include "sensor_handler.h"
+#include "motor_driver.h"
 
 // Shared global arrays
 int thruster_cmd[NUM_THRUSTERS]; 
@@ -20,7 +21,8 @@ void vCommunicationsTask(void *pvParameters);
 
 void setup() {
   Serial.begin(115200);
-  
+
+  init_motor_driver();
   init_sensor();
   init_ethernet();
   init_servo();

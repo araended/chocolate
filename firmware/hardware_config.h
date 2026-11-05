@@ -26,6 +26,17 @@
 
 #define SERVO_PIN              16
 
+// --- L298N MOTOR DRIVER ---
+#define MOTOR_A_IN1             5
+#define MOTOR_A_IN2             12
+#define MOTOR_A_EN              17
+#define MOTOR_B_IN1             15
+#define MOTOR_B_IN2             0
+#define MOTOR_B_EN              2
+#define MOTOR_PWM_FREQ          5000
+#define MOTOR_PWM_RESOLUTION    8
+#define MOTOR_PWM_DUTY          80
+
 // --- ADC CHANNELS ---
 #define ADS1115_PRESSURE_CH 0 // Connected to A0 on the ADS module
 
