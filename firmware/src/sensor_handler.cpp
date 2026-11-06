@@ -1,5 +1,5 @@
-#include  "sensor_handler.h"
-#include "ethernet_handler.h"
+#include <Arduino.h>
+#include "sensor_handler.h"
 Adafruit_ADS1X15 ads;
 
 float depth_constant = 3; //3 cm / mv
@@ -7,9 +7,10 @@ float depth_constant = 3; //3 cm / mv
 void init_sensor(){
   Wire.begin(PIN_I2C_SDA, PIN_I2C_SCL);
   if (!ads.begin()) {
-    String message = "Failed to Initialize ADC";
-    send_ethernet_data(message);
-    while (1);
+    Serial.println("Failed to initialize ADS1115; check I2C wiring and address.");
+    while (true) {
+      delay(1000);
+    }
   }
 }
 
